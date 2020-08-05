@@ -10,6 +10,7 @@ function MyRoute() {
   const [cityName, setCityName] = useState("");
 
   const cityNameFromInputField = (cityName) => {
+    console.log(cityName)
     setCityName(cityName);
     if (cityName === "") {
       alert("Please fill correct city Name");

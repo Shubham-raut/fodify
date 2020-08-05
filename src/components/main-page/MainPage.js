@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./MainPageStyle.css";
+import Filters from "../filters/Filters";
 
 function MainPage(props) {
   const [cityName, setCityName] = useState(null);
   const [cityId, setCityId] = useState("");
   const [restaurentData, setRestaurentData] = useState([]);
+  const [filteredData, setFilteredData] = useState();
+
+  let filterData = {};
+
+  let getFilteredData = (filtData) => {
+    setFilteredData(filtData)
+
+    console.log('filtered data from main page', filterData);
+  }
 
   useEffect(() => {
     setCityName(props.data);
@@ -35,13 +45,13 @@ function MainPage(props) {
         }
       )
       .then((data) => {
-        console.log(data);
+        setRestaurentData(data.data.restaurants);
       });
   }, [cityId]);
 
   return (
     <div className="MainPage_container">
-      {console.log(restaurentData)}
+      {/* {console.log(restaurentData)} */}
       <div className="MainPage_nav_container">
         <div>
           <input id="typeNewCity" type="text" value={cityName} />
@@ -61,7 +71,11 @@ function MainPage(props) {
         </div>
       </div>
       <div className="mainPage_main_data_container">
-        <div className="MainPage_filter_container"></div>
+        <div className="MainPage_filter_container">
+          {/* <div className='Premium'>Premium</div>
+          <div className='Restaurants'>Restaurants</div> */}
+          <Filters res={restaurentData} mainPageCallback={getFilteredData} ></Filters>
+        </div>
         <div className="mainPage_restaurent_container">
           {/* {restaurentData.data.restaurants((items) => {
             return (
