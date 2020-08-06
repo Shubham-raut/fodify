@@ -7,15 +7,16 @@ function MainPage(props) {
   const [cityName, setCityName] = useState(null);
   const [cityId, setCityId] = useState("");
   const [restaurentData, setRestaurentData] = useState([]);
-  const [filteredData, setFilteredData] = useState();
+  const [filteredData, setFilteredData] = useState({});
 
-  let filterData = {};
 
-  let getFilteredData = (filtData) => {
-    setFilteredData(filtData)
+  // accepting data from filters
+  let getFilteredData = (filteredData) => {
+    setFilteredData(filteredData);
+  };
+  console.log(filteredData);
 
-    console.log('filtered data from main page', filterData);
-  }
+
 
   useEffect(() => {
     setCityName(props.data);
