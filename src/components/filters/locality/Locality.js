@@ -54,7 +54,7 @@ class Locality extends Component {
     }
 
     render() {
-
+        this.items = [];
         for (let k in this.dataStore) {
             this.items.push(<button value={k} onClick={this.localityHandlor}>{k}</button>)
         }
