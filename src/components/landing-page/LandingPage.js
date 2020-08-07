@@ -40,18 +40,6 @@ function LandingPage(props) {
           </button>
         </div>
       </div>
-      <div className="landing_page_search_by_restaurent_dishes_container">
-        <div>
-          <input
-            id="restaurentSearch"
-            type="text"
-            placeholder="type restaurent or dishes"
-          />
-        </div>
-        <div>
-          <button id="searchRestaurentBtn">Search</button>
-        </div>
-      </div>
     </div>
   );
 }

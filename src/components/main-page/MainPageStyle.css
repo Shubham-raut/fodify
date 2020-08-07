@@ -157,15 +157,74 @@
 .MainPage_filter_container {
   display: inline-block;
   width: 200px;
-  height: 200px;
-  border: 1px solid #ef8c33;
+  height: 230px;
+
   margin-left: 20px;
+}
+
+.filter {
+  width: 200px;
+  height: 50px;
+  background-color: #ef8c33;
+  text-align: center;
+  color: white;
+  margin-top: 7px;
+  border-radius: 3px;
+}
+
+.filter:hover {
+  width: 200px;
+  height: 50px;
+  background-color: #d66a0b;
+  text-align: center;
+  color: white;
+  margin-top: 2px;
+  cursor: pointer;
 }
 
 .mainPage_restaurent_container {
   display: inline-block;
-  width: 600px;
-  height: 200px;
+  width: 640px;
+
   border: 1px solid #ef8c33;
   margin-left: 30px;
+}
+
+.mainPage_card_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mainPage_restaurent_inner_container {
+  width: 305px;
+  height: 350px;
+  border: 1px solid #ef8c33;
+  margin: 40px 5px;
+}
+.mainPage_restaurent_inner_container:hover {
+  height: 300px;
+  width: 350px;
+  border: 1px solid #ef8c33;
+  margin: 40px 5px;
+  cursor: pointer;
+}
+
+.mainPage_restaurent_card_container {
+  width: 305px;
+  height: 350px;
+  margin: 5px auto;
+}
+
+#timing {
+  font-size: 8px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+#btnForCart {
+  background-color: #ef8c33;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  border: none;
 }
