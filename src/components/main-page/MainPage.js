@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./MainPageStyle.css";
-import { sorted } from './../filters/Filters'
+import { sorted, localityRest } from './../filters/Filters'
 
 function MainPage(props) {
   const [cityName, setCityName] = useState("");
   const [cityId, setCityId] = useState("");
   const [restaurentData, setRestaurentData] = useState([]);
+
+  const [restData, setRestData] = useState([]);
+  const [dataFetch, setDataFetch] = useState(false);
+
   const [newCityName, setNewCityName] = useState("");
   const [qVal, setQval] = useState("");
 
@@ -43,7 +47,9 @@ function MainPage(props) {
           }
         )
         .then((data) => {
+          setDataFetch(true);
           setRestaurentData(data.data.restaurants);
+          setRestData([...sorted(data.data.restaurants, 'popularity')])
         });
     } else {
       console.log("welome");
@@ -61,6 +67,21 @@ function MainPage(props) {
   const changeDish = (e) => {
     setQval(e.target.value);
   };
+
+  let loc = localityRest(restaurentData);
+  let keys = Object.keys(loc);
+
+  let localityHandlor = (key) => {
+    setRestData([...loc[key]]);
+  }
+
+  let listItems = keys.map((key) => {
+    return (
+      <div onClick={() => localityHandlor(key)} className="locFilter">
+        {key}
+      </div>
+    )
+  })
 
   return (
     <div className="MainPage_container">
@@ -104,23 +125,32 @@ function MainPage(props) {
       </div>
       <div className="mainPage_main_data_container">
         <div className="MainPage_filter_container">
-          <div onClick={() => setRestaurentData([...sorted(restaurentData, 'popularity')])} className="filter">
-            Top Picks
-          </div>
-          <div onClick={() => setRestaurentData([...sorted(restaurentData, 'rating')])} className="filter">
-            Best Rating
-          </div>
-          <div onClick={() => setRestaurentData([...sorted(restaurentData, 'costHL')])} className="filter">
-            High To Low
-          </div>
-          <div onClick={() => setRestaurentData([...sorted(restaurentData, 'costLH')])} className="filter">
-            Cost low to high
-          </div>
+
+          <div>
+            <div onClick={() => setRestData([...sorted(restaurentData, 'popularity')])} className="filter">
+              Top Picks
+            </div>
+            <div onClick={() => setRestData([...sorted(restaurentData, 'rating')])} className="filter">
+              Best Rating
+            </div>
+            <div onClick={() => setRestData([...sorted(restaurentData, 'costHL')])} className="filter">
+              High To Low
+            </div>
+            <div onClick={() => setRestData([...sorted(restaurentData, 'costLH')])} className="filter">
+              Cost low to high
+            </div>
+          </div><br /><br />
+          {dataFetch ? <div>
+            <div className='filter'>Locations of {cityName}</div>
+            {listItems}
+          </div> : null
+          }
+
         </div>
         <div className="mainPage_restaurent_container">
           <div className="mainPage_card_container">
-            {restaurentData.length !== 0 ? (
-              restaurentData.map((items) => {
+            {restData.length !== 0 ? (
+              restData.map((items) => {
                 return (
                   <div
                     className="mainPage_restaurent_inner_container"
@@ -156,6 +186,7 @@ function MainPage(props) {
               )}
           </div>
         </div>
+        <div className='mainPage_cart_container'>Cart</div>
       </div>
     </div>
   );

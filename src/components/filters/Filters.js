@@ -40,3 +40,28 @@ export const locality = (data) => {
 
     return dataStore;
 }
+
+
+
+export const localityRest = (data) => {
+    let dataStoreRest = [];
+
+    const localitySetObj = (key, value) => {
+        if (!(key in dataStoreRest)) {
+            dataStoreRest[key] = [value];
+        }
+        else {
+            dataStoreRest[key] = [...dataStoreRest[key], value];
+        }
+    }
+
+    data.forEach(a => {
+        let loc = (a.restaurant.location.locality).split(', ');
+        // let resID = a.restaurant.R.res_id;
+        for (let i of loc) {
+            localitySetObj(i, a);
+        }
+    });
+
+    return dataStoreRest;
+}
