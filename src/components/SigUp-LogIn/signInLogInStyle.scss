@@ -1,0 +1,129 @@
+$logInSignUpbg: rgba(145, 142, 142, 0.3);
+$containerbg: #ffffff;
+
+.SignUpLogIn_main_container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: $logInSignUpbg;
+  display: flex;
+  justify-content: center;
+  #X {
+    outline: none;
+    border: none;
+    float: right;
+    background-color: #ef8c33;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      background-color: #492b05;
+    }
+    &:focus {
+      background-color: #e68c1b;
+    }
+  }
+
+  .SignUpLogIn_container {
+    width: 350px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: $containerbg;
+    height: max-content;
+    padding: 10px;
+    top: 8%;
+    position: absolute;
+
+    .logIn_container,
+    .signUp_container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-weight: bold;
+        text-align: center;
+        font-size: 24px;
+        margin: 0 auto 15px;
+      }
+
+      input[type="text"] {
+        width: 290px;
+        height: 30px;
+        border-radius: 4px;
+        border: 1px solid #ef8c33;
+        margin-top: 5px;
+      }
+
+      input[type="text"]:focus {
+        border-radius: 4px;
+        border: 2px solid #ef8c33;
+        outline: none;
+      }
+      input[type="password"] {
+        width: 290px;
+        height: 30px;
+        border-radius: 4px;
+        margin-top: 5px;
+        border: 1px solid #ef8c33;
+      }
+      input[type="password"]:focus {
+        border-radius: 4px;
+        margin-top: 5px;
+        border: 2px solid #ef8c33;
+        outline: none;
+      }
+      button {
+        width: 110px;
+        margin: 15px auto;
+        height: 30px;
+        background-color: #ef8c33;
+        border-radius: 4px;
+        outline: none;
+        border: none;
+        color: white;
+      }
+      button:focus {
+        background-color: #ef8c33;
+        border-radius: 4px;
+        outline: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #efab3a;
+        border-radius: 4px;
+        outline: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .SignUpLogIn_main_container {
+    .SignUpLogIn_container {
+      width: 250px;
+      height: 300px;
+      .logIn_container input[type="text"],
+      .logIn_container input[type="password"],
+      .signUp_container input[type="text"],
+      .signUp_container input[type="password"] {
+        width: 190px;
+      }
+      .logIn_container button,
+      .signUp_container button {
+        width: 192px;
+      }
+      .logIn_container,
+      .signUp_container {
+        width: 200px;
+      }
+    }
+  }
+}

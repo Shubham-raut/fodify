@@ -1,0 +1,441 @@
+.MainPage_container {
+    margin: 0px;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+.marginBot {
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+    margin: 5px 0;
+}
+
+.MainPage_nav_container {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    align-content: center;
+    align-items: center;
+    background-color: #ef8c33;
+    padding: 10px 0;
+    gap: 5px;
+
+    .navTitle {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        font-weight: bold;
+        font-family: "URW Chancery L", cursive;
+    }
+
+    .MainPage_nav_Inner {
+        display: flex;
+        width: 90%;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+
+        .navSearches {
+            display: flex;
+            grid-gap: 1em;
+            gap: 1em;
+            justify-content: space-between;
+        }
+
+        #typeNewCity {
+            width: 150px;
+            height: 43px;
+            border-radius: 4px;
+            padding: 0 5px;
+            border: none;
+            &:focus {
+                outline: none;
+                box-shadow: 0px 0px 2px 2px #cb202d;
+            }
+        }
+
+        #searchNewCity {
+            height: 45px;
+            border-radius: 4px;
+            margin-left: 5px;
+            width: 80px;
+            background-color: #ef8c33;
+            color: white;
+            border: 1px solid white;
+            cursor: pointer;
+
+            &:focus {
+                box-shadow: 0px 0px 1px 1px white;
+            }
+
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+
+        #typeDish {
+            width: 450px;
+            height: 43px;
+            border-radius: 4px;
+            padding: 0 5px;
+            border: none;
+            &:focus {
+                outline: none;
+                box-shadow: 0px 0px 2px 2px #cb202d;
+            }
+        }
+
+        .userName {
+            max-width: 160px;
+            min-width: 150px;
+            color: #444;
+            flex-basis: 18%;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .navBtns {
+            flex-basis: 20%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .navBtn {
+            height: 45px;
+            margin-left: 5px;
+            width: 70px;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            background-color: black;
+            padding: 0.5em;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+    }
+}
+
+.mainPage_main_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mainPage_main_data_container {
+    display: flex;
+    width: 95%;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.mainPage_main_data_Title {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.actFtr {
+    font-size: 20px;
+    color: #666;
+    text-shadow: 1px 1px #bbb;
+    margin-bottom: 5px;
+}
+
+.mainPage_main_data_Inner {
+    width: 100%;
+    display: flex;
+    gap: 1em;
+    justify-content: space-evenly;
+}
+
+.MainPage_filter_container {
+    display: inline-block;
+    width: 250px;
+    box-sizing: border-box;
+    height: max-content;
+    background: #fff;
+    box-shadow: none;
+    padding: 1em;
+    border-radius: 3px;
+    border: 1px solid #e7e7e7;
+    overflow: hidden;
+
+    .filterTitle {
+        font-size: 22px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .filter {
+        color: black;
+        padding: 8px 16px;
+        display: block;
+        cursor: pointer;
+        &:focus {
+            color: red;
+        }
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+
+    .locFilter {
+        color: black;
+        padding: 8px 16px;
+        display: block;
+        cursor: pointer;
+        &:focus {
+            color: red;
+        }
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+}
+
+.mainPage_card_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 1em;
+    padding: 0;
+    // width: 76%;
+}
+
+.mainPage_restaurent_inner_container {
+    display: grid;
+    width: 250px;
+    height: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid #e7e7e7;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid #b7b7b7;
+    }
+}
+
+.mainPage_restaurent_card_container {
+    display: flex;
+    width: 250px;
+    height: 100%;
+    flex-direction: column;
+    font-size: 15px;
+    color: #333;
+}
+
+.res_img_area {
+    display: grid;
+    background-color: #777;
+    align-content: center;
+    justify-content: center;
+    height: 160px;
+    width: 250px;
+    border: 1px solid black;
+    box-sizing: border-box;
+
+    img {
+        width: 250px;
+        height: 160px;
+    }
+}
+.res_title {
+    overflow: hidden;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    padding: 0;
+    margin: 15px 0 10px;
+}
+.res_title,
+.res_cuisines,
+.res_loc,
+.res_timing {
+    margin-bottom: 10px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.rate-cost {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.res_rating_green,
+.res_rating_red {
+    width: 35px;
+    display: block;
+    text-align: center;
+    padding: 5px;
+}
+.res_rating_green {
+    background-color: #48c479;
+}
+.res_rating_red {
+    background-color: #db7c38;
+}
+
+.filterCollapse {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .filterCollapseBtn {
+        display: none;
+        width: 100px;
+        padding: 0;
+        text-align: center;
+        height: 35px;
+
+        border-radius: 4px;
+        background-color: #ef8c33;
+        color: white;
+        border: 1px solid white;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 2px 2px 2px 2px #bbb;
+        }
+    }
+}
+
+#ftr {
+    position: absolute;
+    display: none;
+    left: 3%;
+    &:hover {
+        border: 1px solid #b7b7b7;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .MainPage_nav_container {
+        .MainPage_nav_Inner {
+            width: 95%;
+            .navBtns {
+                flex-basis: 20%;
+            }
+            #typeDish {
+                width: 300px;
+            }
+        }
+    }
+
+    .mainPage_card_container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+    }
+
+    .mainPage_main_data_container {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .MainPage_filter_container {
+        display: none;
+    }
+
+    .filterCollapse {
+        .filterCollapseBtn {
+            display: block;
+        }
+    }
+    #ftr {
+        display: block;
+    }
+
+    .mainPage_card_container {
+        width: 100%;
+    }
+
+    .MainPage_nav_container {
+        .MainPage_nav_Inner {
+            #typeNewCity {
+                width: 120px;
+            }
+            #searchNewCity {
+                width: 50px;
+            }
+            #typeDish {
+                width: 140px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .mainPage_card_container {
+        grid-template-columns: 1fr;
+    }
+
+    .MainPage_nav_container {
+        height: 200px;
+        .MainPage_nav_Inner {
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .MainPage_nav_container {
+        .navTitle {
+            font-size: 30px;
+        }
+        .MainPage_nav_Inner {
+            #typeNewCity {
+                height: 32px;
+            }
+            #searchNewCity {
+                height: 35px;
+            }
+            #typeDish {
+                width: 130px;
+                height: 32px;
+            }
+            .navBtn {
+                height: 35px;
+            }
+        }
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .MainPage_nav_container {
+        .MainPage_nav_Inner {
+            #typeNewCity {
+                width: 90px;
+            }
+            #searchNewCity {
+                width: 40px;
+            }
+            #typeDish {
+                width: 100px;
+            }
+        }
+    }
+}

@@ -1,0 +1,175 @@
+.landing_page_main_container {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.landing_page_header_container {
+    width: 680px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    box-sizing: border-box;
+}
+
+.signUpLoginButtons {
+    display: flex;
+    gap: 1em;
+    flex-grow: 1;
+    text-align: center;
+    padding-top: 30px;
+    justify-content: end;
+
+    button {
+        border: none;
+        width: 90px;
+        height: 40px;
+        color: white;
+        border-radius: 3px;
+        background-color: black;
+        padding: 0.5em 1em;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+            border: 1px solid #ef8c33;
+            box-shadow: 0px 0px 2px 2px #ef8c33;
+        }
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+}
+
+.title {
+    text-align: center;
+    color: #ef8c33;
+    font-weight: bold;
+    font-size: 70px;
+    margin: 35px 0 30px 0;
+    font-family: "URW Chancery L", cursive;
+}
+.subTitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: darkgrey;
+    font-family: "Segoe UI";
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+.landing_page_search_by_city_container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 40px 0;
+
+    .nearMe {
+        background-color: #f0801c;
+        border-radius: 3px;
+        border-right: none;
+        width: 140px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        border: 1px solid #ef8c33;
+        color: white;
+        cursor: pointer;
+
+        span {
+            margin-left: 1em;
+        }
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+}
+
+#citySearch {
+    width: 370px;
+    height: 45px;
+    border-radius: 4px;
+    padding: 0 5px;
+    border: 1px solid #ef8c33;
+    &:focus {
+        outline: none;
+        box-shadow: 0px 0px 2px 2px #ef8c33;
+    }
+}
+
+#citySearchbtn {
+    height: 50px;
+    border-radius: 4px;
+    margin-left: 5px;
+    width: 140px;
+    background-color: #ef8c33;
+    color: white;
+    border: 1px solid #ef8c33;
+    cursor: pointer;
+
+    &:focus {
+        box-shadow: 0px 0px 1px 1px #ef8c33;
+    }
+
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 140px;
+    max-height: 300px;
+    margin-top: 10px;
+    border-radius: 3px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content-items {
+    color: black;
+    padding: 12px;
+    text-align: center;
+    display: block;
+    border-bottom: 2px solid white;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .nearMeArea {
+        display: none;
+    }
+
+    .signUpLoginButtons {
+        margin: auto 5%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #citySearch {
+        width: 200px;
+    }
+    #citySearchbtn {
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #citySearch {
+        width: 160px;
+    }
+    #citySearchbtn {
+        width: 90px;
+    }
+}

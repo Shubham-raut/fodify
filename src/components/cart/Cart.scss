@@ -1,0 +1,144 @@
+.cartConatiner {
+    background-color: white;
+    height: max-content;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    box-sizing: border-box;
+    margin-top: 50px;
+    position: absolute;
+    right: 3%;
+    border: 1px solid #efefef;
+    border-radius: 7px;
+
+    &:hover {
+        border: 1px solid #b7b7b7;
+    }
+}
+
+.cart_title {
+    font-size: 28px;
+    font-weight: 500;
+    align-self: flex-start;
+    margin-bottom: 5px;
+}
+
+.cart_totalItem {
+    color: #333333;
+    align-self: flex-start;
+    margin-bottom: 25px;
+}
+
+.cart_Items {
+    max-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: auto;
+    gap: 1em;
+}
+
+.cart_item_card {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart_item_card_left {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.cart_item_name {
+    font-size: 17px;
+}
+
+.cart_item_price {
+    font-size: 13px;
+    color: #555;
+    text-align: center;
+}
+
+.cart_item_card_right {
+    display: flex;
+    max-width: 80px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.cart_item_card_right_top {
+    display: flex;
+    border: 1px solid #aaa;
+    max-width: 75px;
+    padding: 3px;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+
+    .incBtn,
+    .decBtn {
+        width: 25px;
+        padding: 0;
+        background-color: white;
+        color: #555;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .incBtn {
+        &:hover {
+            background-color: rgb(183, 240, 183);
+        }
+    }
+    .decBtn {
+        &:hover {
+            background-color: rgb(241, 195, 195);
+        }
+    }
+}
+
+.cart_item_card_right_bot {
+    text-align: center;
+}
+
+.total_price {
+    margin-top: 22px;
+}
+
+.checkoutBtn {
+    height: 50px;
+    width: 100%;
+    background-color: #60b246;
+    outline: 0;
+    cursor: pointer;
+    border: 0;
+    color: #fff;
+    margin-top: 28px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+
+    &:hover {
+        box-shadow: 2px 2px 2px 2px #bbb;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .cartConatiner {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .cartConatiner {
+        width: 250px;
+    }
+}
